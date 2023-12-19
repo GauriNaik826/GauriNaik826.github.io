@@ -192,7 +192,7 @@ header .navbar ul li a:hover {
   
 }
 .btn-about {
-  margin-left: 5vh; /* Adjust this value as needed */
+  margin-right: 5vh; /* Adjust this value as needed */
 }
 .home #particles-js {
   position: absolute;
