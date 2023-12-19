@@ -253,7 +253,7 @@ body .home .btn {
   position: absolute;
   line-height: 0;
   padding: 1.6rem 3rem;
-  border-radius: 7em;
+  border-radius: 5em;
   transition: 0.5s;
   color: #fff;
   background: #2506ad;
