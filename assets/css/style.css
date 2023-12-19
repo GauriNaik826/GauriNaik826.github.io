@@ -187,6 +187,7 @@ header .navbar ul li a:hover {
   align-items: center;
   text-align: center;
   min-height: 100vh;
+  padding-top: 100px; /* Adjust the top padding as needed */
   position: relative;
   
 }
