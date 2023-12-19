@@ -180,12 +180,15 @@ header .navbar ul li a:hover {
 
 /* hero section starts*/
 .home {
-  position: relative;
+
   display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  min-height: 100vh;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  position: relative;
+  
 }
 .home #particles-js {
   position: absolute;
