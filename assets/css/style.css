@@ -186,9 +186,9 @@ header .navbar ul li a:hover {
   justify-content: center;
   align-items: center;
   text-align: center;
-  min-height: 100vh;
-  padding-top: 100px; /* Adjust the top padding as needed */
+  min-height: 80vh; /* Adjust the value to position it lower or higher */
   position: relative;
+  padding-top: 10vh; /* Additional padding to move it lower */
   
 }
 .home #particles-js {
