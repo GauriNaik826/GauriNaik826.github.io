@@ -247,10 +247,9 @@ header .navbar ul li a:hover {
   font-weight: 600;
   padding: 1rem 0;
 }
-.home .btn {
+body .home .btn {
   margin-top: 1rem;
-  margin-left: -4rem;
-  margin-right: -10rem;
+  margin-left: -6rem;
   position: absolute;
   line-height: 0;
   padding: 1.6rem 3rem;
