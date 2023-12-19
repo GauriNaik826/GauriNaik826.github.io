@@ -249,6 +249,7 @@ header .navbar ul li a:hover {
 }
 .home .btn {
   margin-top: 1rem;
+  margin-left: -2rem;
   position: absolute;
   line-height: 0;
   padding: 1.6rem 3rem;
@@ -265,7 +266,7 @@ header .navbar ul li a:hover {
   letter-spacing: 0.1rem;
 }
 .home .btn i {
-  margin-left: 0.8rem;
+  margin-left: 0.3rem;
   font-size: 1.5rem;
   transition: 0.3s;
 }
