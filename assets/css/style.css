@@ -249,7 +249,8 @@ header .navbar ul li a:hover {
 }
 .home .btn {
   margin-top: 1rem;
-  margin-left: -5rem;
+  margin-left: -4rem;
+  margin-right: -10rem;
   position: absolute;
   line-height: 0;
   padding: 1.6rem 3rem;
