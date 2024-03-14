@@ -59,7 +59,7 @@ html::-webkit-scrollbar-thumb {
 /* pre loader end */
 
 /* navbar starts */
-header {
+/* header {
   position: fixed;
   top: 0;
   left: 0;
@@ -120,9 +120,88 @@ header .navbar ul li a:hover {
   color: #011aff;
   border-bottom: 0.2rem solid #011aff;
   padding: 0.5rem 0;
-}
+} */
 /* navbar ends */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* This ensures that the logo and the navbar are spaced out on the main axis */
+  padding: 1.5rem 5%; /* Adjust padding as needed */
+  background-color: #fff; /* Background color of the header */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow to lift the header off the page */
+  position: fixed;
+  width: 100%; /* Full width */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Ensures the header stays above other content */
+}
 
+header .logo {
+  font-size: 2.4rem; /* Adjust the logo size as needed */
+  font-weight: 700; /* Makes the logo text bolder */
+  color: #333; /* Logo text color */
+}
+
+header .navbar ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+header .navbar li {
+  margin-left: 2rem; /* Space between menu items */
+}
+
+header .navbar a {
+  font-size: 1.6rem; /* Menu item font size */
+  color: #333; /* Menu item text color */
+  text-decoration: none;
+  padding: 0.5rem 1rem; /* Padding around menu items for larger click area */
+  border-radius: 5px; /* Rounded corners for menu items */
+  transition: background-color 0.2s ease-in-out; /* Smooth transition for menu item background color */
+}
+
+header .navbar a:hover,
+header .navbar a.active {
+  background-color: #f0f0f0; /* Background color for menu item hover state */
+}
+
+/* Responsive Design for Mobile Menu */
+@media (max-width: 768px) {
+  header .navbar {
+    display: none; /* Hide the navbar on smaller screens */
+    flex-direction: column; /* Stack menu items vertically */
+    background-color: #fff; /* Background color of the mobile menu */
+    position: absolute;
+    top: 100%; /* Position right below the header */
+    left: 0;
+    width: 100%; /* Full width */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for mobile menu */
+    border-top: 1px solid #eee; /* Separation line between header and menu */
+  }
+
+  header .navbar.active {
+    display: flex; /* Show the navbar when active (menu icon clicked) */
+  }
+
+  #menu {
+    display: block; /* Show the menu icon on smaller screens */
+    cursor: pointer;
+    font-size: 3rem;
+    color: #333;
+  }
+
+  header .navbar li {
+    text-align: center; /* Center align menu items */
+    width: 100%; /* Full width */
+    margin: 0; /* Reset margin */
+  }
+
+  header .navbar a {
+    display: block; /* Block level, so it fills the width of its container */
+    margin: 1rem 0; /* Margin around menu items */
+  }
 /* hamburger icon starts*/
 #menu {
   font-size: 3rem;
