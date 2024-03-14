@@ -1,114 +1,194 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap");
 
-/* Reset default styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  transition: all 0.2s linear;
 }
-
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
 body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    padding: 10px; /* or any other amount to control overall spacing */
-    background-color: #f4f4f4; /* light gray background */
+  background: #f7f7f7;
+  font-family: "Poppins", sans-serif;
 }
 
-/* Header */
-header {
-    background: #ffffff;
-    padding: 10px 20px; /* Reduced padding */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+*::selection {
+  background: #2b3dda;
+  color: #fff;
 }
 
-header .navbar {
-    list-style-type: none;
-    overflow: hidden;
-    background-color: #333; /* dark background for navbar */
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+html::-webkit-scrollbar {
+  width: 0.8rem;
+}
+html::-webkit-scrollbar-track {
+  background: rgb(235, 202, 245);
+}
+html::-webkit-scrollbar-thumb {
+  background: #420177;
+}
+
+/* pre loader start */
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  background: #e6eff1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+.loader-container.fade-out {
+  top: -120%;
+}header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* This ensures that the logo and the navbar are spaced out on the main axis */
+  padding: 1.5rem 5%; /* Adjust padding as needed */
+  background-color: #fff; /* Background color of the header */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow to lift the header off the page */
+  position: fixed;
+  width: 100%; /* Full width */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Ensures the header stays above other content */
+}
+
+header .logo {
+  font-size: 2.4rem; /* Adjust the logo size as needed */
+  font-weight: 700; /* Makes the logo text bolder */
+  color: #333; /* Logo text color */
+}
+
+header .navbar ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
 }
 
 header .navbar li {
-    float: left;
+  margin-left: 2rem; /* Space between menu items */
 }
 
-header .navbar li a {
+header .navbar a {
+  font-size: 1.6rem; /* Menu item font size */
+  color: #333; /* Menu item text color */
+  text-decoration: none;
+  padding: 0.5rem 1rem; /* Padding around menu items for larger click area */
+  border-radius: 5px; /* Rounded corners for menu items */
+  transition: background-color 0.2s ease-in-out; /* Smooth transition for menu item background color */
+}
+
+header .navbar a:hover,
+header .navbar a.active {
+  background-color: #f0f0f0; /* Background color for menu item hover state */
+}
+
+/* Responsive Design for Mobile Menu */
+@media (max-width: 768px) {
+  header .navbar {
+    display: none; /* Hide the navbar on smaller screens */
+    flex-direction: column; /* Stack menu items vertically */
+    background-color: #fff; /* Background color of the mobile menu */
+    position: absolute;
+    top: 100%; /* Position right below the header */
+    left: 0;
+    width: 100%; /* Full width */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for mobile menu */
+    border-top: 1px solid #eee; /* Separation line between header and menu */
+  }
+
+  header .navbar.active {
+    display: flex; /* Show the navbar when active (menu icon clicked) */
+  }
+
+  #menu {
+    display: block; /* Show the menu icon on smaller screens */
+    cursor: pointer;
+    font-size: 3rem;
+    color: #333;
+  }
+
+  header .navbar li {
+    text-align: center; /* Center align menu items */
+    width: 100%; /* Full width */
+    margin: 0; /* Reset margin */
+  }
+
+  header .navbar a {
+    display: block; /* Block level, so it fills the width of its container */
+    margin: 1rem 0; /* Margin around menu items */
+  }
+/* hamburger icon starts*/
+#menu {
+  font-size: 3rem;
+  cursor: pointer;
+  color: rgb(24, 2, 63);
+  display: none;
+}
+@media (max-width: 768px) {
+  #menu {
     display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px; /* Adjusted padding for nav links */
-    text-decoration: none;
-}
-
-/* Main content */
-main {
-    padding: 15px; /* Control main content padding */
-}
-
-/* Education Section */
-.education {
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    background-color: #fff;
-    margin: 20px 0; /* Adjust top and bottom margins */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.education img {
-    width: 100px; /* Adjust width as necessary */
-    height: auto;
-    margin-right: 20px; /* Space between image and text */
-}
-
-.education .content {
-    flex-grow: 1;
-}
-
-.education h1 {
-    font-size: 24px; /* Adjusted heading size */
-    margin-bottom: 5px; /* Reduced margin */
-}
-
-.education p {
-    margin-bottom: 5px; /* Reduced margin */
-}
-
-/* Scroll to top button */
-.scrollToTop {
+  }
+  header .navbar {
     position: fixed;
-    bottom: 20px;
-    right: 30px;
-    padding: 10px;
-    background-color: #ffcc00;
-    border: none;
-    border-radius: 50%;
-    display: none; /* hidden until scrolled down */
-}
+    top: 6.5rem;
+    right: -120%;
+    width: 75%;
+    height: 100%;
+    text-align: left;
+    align-items: flex-start;
+    background-color: #0e0f31;
+  }
+  header .navbar ul {
+    flex-flow: column;
+    padding: 1rem;
+  }
+  header .navbar ul li {
+    text-align: center;
+    width: 100%;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+    width: 26rem;
+  }
+  header .navbar ul li a {
+    display: block;
+    padding: 1rem;
+    text-align: left;
+    color: #fff;
+    font-size: 2rem;
+  }
+  header .navbar ul li a.active,
+  header .navbar ul li a:hover {
+    padding: 1rem;
+    color: #fff;
+    border-radius: 0.5rem;
+    border-bottom: 0.5rem solid #011aff;
+  }
+  .fa-times {
+    transform: rotate(180deg);
+  }
+  header .navbar.nav-toggle {
+    right: 0;
+  }
+}}
 
-/* Show the button when scrolled 20px from the top of the document */
-window.onscroll = function() {
-    scrollFunction()
-};
-
-function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("scrollToTop").style.display = "block";
-    } else {
-        document.getElementById("scrollToTop").style.display = "none";
-    }
-}
-
-/* Add smooth scrolling to all links */
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
 
 .publications .heading {
     text-align: center;
@@ -140,16 +220,24 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     font-weight: 600; /* Make strong elements like 'Authors' and 'Conference' bold */
 }
 .carousel-item img {
-  width: 100%; /* Ensure the width is always 100% of the carousel item */
-  height: auto; /* Maintain the aspect ratio of the image */
-  object-fit: cover; /* Cover the area of the container without stretching. */
-  min-height: 400px; /* Minimum height to ensure consistency in the carousel's appearance */
-  max-height: 600px; /* Maximum height to prevent images from being too tall on large screens */
+  width: 100%; /* Maintain the full width */
+  height: auto; /* Keep the aspect ratio */
+  object-fit: contain; /* Ensure the whole image is visible */
+  min-height: 400px; /* Minimum height to ensure consistency */
 }
 
 .carousel-inner {
-  overflow: hidden; /* Hide the overflow to prevent large images from going off-screen */
+  overflow: hidden; /* Hide the overflow */
 }
+
+/* Additional styling to vertically center the images if they have different sizes */
+.carousel-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px; /* Fixed height or adjust as needed */
+}
+
 
 /* hero section starts*/
 .home {
