@@ -828,9 +828,11 @@ body .home .btn {
 /* experience section starts */
 .experience .timeline {
   position: relative;
-  max-width: 1200px;
+  max-width: 100%; /* Adjusting to fit the viewport width */
   margin: 0 auto;
+  padding: 0 2rem; /* Add padding to ensure content doesn't touch the edges */
 }
+
 .experience .timeline::after {
   content: "";
   position: absolute;
@@ -839,14 +841,17 @@ body .home .btn {
   top: 0;
   bottom: 0;
   left: 50%;
-  margin-left: -3px;
+  transform: translateX(-50%); /* Center the line */
   z-index: -2;
 }
+
 .experience .container {
-  padding: 10px 40px;
+  padding: 10px 20px; /* Reduced padding */
   position: relative;
   background-color: inherit;
-  width: 50%;
+  width: 100%; /* Full width to accommodate the timeline */
+  max-width: 600px; /* Max width can be adjusted based on content */
+  margin: 1rem auto; /* Centers the container */
 }
 /*circles on timeline*/
 .experience .container::after {
@@ -866,14 +871,25 @@ body .home .btn {
   color: #02094b;
   font-family: "Font Awesome\ 5 Free";
 }
-.experience .left {
-  left: 0;
+experience .container.left,
+.experience .container.right {
+  float: none; /* Remove float */
+  clear: both; /* Clear both sides */
+  display: table; /* Allows us to use margin auto for horizontal centering */
 }
-.experience .right {
-  left: 50%;
+
+.experience .left::before,
+.experience .right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  z-index: 1;
+  border-style: solid;
+  border-color: transparent #f68c09 transparent transparent;
 }
 /* arrows pointing right */
-.experience .left::before {
+/* .experience .left::before {
   content: " ";
   height: 0;
   position: absolute;
@@ -886,7 +902,7 @@ body .home .btn {
   border-color: transparent transparent transparent #f68c09;
 }
 /* arrows pointing left  */
-.experience .right::before {
+/* .experience .right::before {
   content: " ";
   height: 0;
   position: absolute;
@@ -897,7 +913,7 @@ body .home .btn {
   border: medium solid #f68c09;
   border-width: 10px 10px 10px 0;
   border-color: transparent #f68c09 transparent transparent;
-}
+} */ */
 .experience .right::after {
   left: -16px;
 }
